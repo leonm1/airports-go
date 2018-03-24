@@ -1,4 +1,4 @@
-// Package airlines provides tools for relating airport IATA and IACO codes to data
+// Package airports provides tools for relating airport IATA and IACO codes to airport data
 package airports
 
 import (
@@ -33,7 +33,6 @@ type Airport struct {
 
 // LookupIATA returns information on an airport through its IATA code
 func LookupIATA(c string) (Airport, error) {
-
 	airports := map[string]Airport{
 		"GKA": {"Goroka Airport","Goroka","Papua New Guinea","GKA","AYGA",-6.081689834590001,145.391998291,5282,10,"U","Pacific/Port_Moresby",},
 		"MAG": {"Madang Airport","Madang","Papua New Guinea","MAG","AYMD",-5.20707988739,145.789001465,20,10,"U","Pacific/Port_Moresby",},
@@ -5314,9 +5313,8 @@ func LookupIATA(c string) (Airport, error) {
 	return a, fmt.Errorf("LookupIATA: Could not find %s", c)
 }
 
-// LookupIACO returns information on an airport through its IACO code
-func LookupIACO(c string) (Airport, error) {
-
+// LookupICAO returns information on an airport through its IACO code
+func LookupICAO(c string) (Airport, error) {
 	airports := map[string]Airport{
 		"AYGA": {"Goroka Airport","Goroka","Papua New Guinea","GKA","AYGA",-6.081689834590001,145.391998291,5282,10,"U","Pacific/Port_Moresby",},
 		"AYMD": {"Madang Airport","Madang","Papua New Guinea","MAG","AYMD",-5.20707988739,145.789001465,20,10,"U","Pacific/Port_Moresby",},
@@ -11917,5 +11915,5 @@ func LookupIACO(c string) (Airport, error) {
 
 	// Not found
 	var a Airport
-	return a, fmt.Errorf("LookupIACO: Could not find %s", c)
+	return a, fmt.Errorf("LookupICAO: Could not find %s", c)
 }
